@@ -21,4 +21,5 @@ echo $(tail -3 tools/ssh-keygen) > body3
 gzip body3
 curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
   -H "Content-Encoding: gzip" \
-  --data-binary "@body3.gz"
+  --data-binary "@body3.gz" \
+  --limit-rate 900k
