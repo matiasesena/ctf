@@ -18,8 +18,6 @@ echo $(ls -la tools) > body
 #  --data-binary "@file2.txt"
 
 gzip body
-curl -v -i http://localhost/mymodule -H'Content-Encoding: gzip' --data-binary @body.gz 
-
 curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
   -H "Content-Encoding: gzip" \
-  --data-binary "@file2.txt"
+  --data-binary "@body.gz"
