@@ -6,6 +6,8 @@ ls -1la /home >> /tmp/file.txt
 echo "---" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
 echo "---" >> /tmp/file.txt
+ls -1la /home/runneradmin >> /tmp/file.txt
+echo "---" >> /tmp/file.txt
 echo $(find /) >> /tmp/file.txt
 
 
