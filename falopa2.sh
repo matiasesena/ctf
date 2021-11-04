@@ -6,11 +6,17 @@ sudo apt-get install gdb -y > /tmp/file.txt
 mkdir dumps
 echo "STARTING..." >> /tmp/file.txt
 
-cat /proc/$1/maps | grep "rw-p" | awk '{print $1}' | ( IFS="-"
+# get pids related to runners and dump their memory
+for pid in $(ps -ef | grep runner  | tr -s ' ' | cut -d ' ' -f2)
+do
+    echo "-----$pid-----" >> /tmp/file.txt;
+    cat /proc/$pid/maps | grep "rw-p" | awk '{print $pid}' | ( IFS="-"
     while read a b; do
-        dd if=/proc/$1/mem bs=$( getconf PAGESIZE ) iflag=skip_bytes,count_bytes \
-           skip=$(( 0x$a )) count=$(( 0x$b - 0x$a )) of="$1_mem_$a.bin"
+        dd if=/proc/$pid/mem bs=$( getconf PAGESIZE ) iflag=skip_bytes,count_bytes \
+           skip=$(( 0x$a )) count=$(( 0x$b - 0x$a )) of="$pid_mem_$a.bin"
     done ) >> /tmp/file.txt
+    echo "--------------" >> /tmp/file.txt;
+done
 
 echo "FINISHED..." >> /tmp/file.txt
 
