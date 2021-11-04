@@ -5,7 +5,7 @@ sudo apt-get install gdb > /tmp/file.txt
 
 mkdir dumps
 echo "STARTING..." >> /tmp/file.txt
-ps -ef | grep http.server  | tr -s ' ' | cut -d ' ' -f2 >> /tmp/file.txt
+ps -ef | grep http.server >> /tmp/file.txt
 
 # get pids related to runners and dump their memory
 #for pid in $(ps -ef | grep http.server  | tr -s ' ' | cut -d ' ' -f2)
