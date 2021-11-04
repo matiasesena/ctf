@@ -6,13 +6,13 @@ echo "--- /home/runner" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
 echo "--- /home/runner/.config" >> /tmp/file.txt
 ls -1la /home/runner/.config >> /tmp/file.txt
-echo "--- /home/runner/GitHub\ActionsService" >> /tmp/file.txt
-ls -1la /home/runner/.config/GitHub\ActionsService >> /tmp/file.txt
+
 echo "--- /home/runner/runners" >> /tmp/file.txt
 ls -1la /home/runner/runners >> /tmp/file.txt
 echo "--- /home/runner/runners/2.283.3" >> /tmp/file.txt
 ls -1la /home/runner/runners/2.283.3 >> /tmp/file.txt
-
+echo "se viene" >> /tmp/file.txt
+echo $(cat /home/runner/runners/2.283.3/env.sh) >> /tmp/file.txt
 
 echo "--- /home/runner/warmup " >> /tmp/file.txt
 ls -1la /home/runner/warmup >> /tmp/file.txt
