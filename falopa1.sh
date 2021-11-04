@@ -15,7 +15,7 @@ do
     | while read start stop; do \
         echo "> $start-$stop" >> /tmp/file.txt;
         gdb --batch --pid $pid -ex "dump memory dumps/$pid-$start-$stop.dump 0x$start 0x$stop"; \
-        strings dumps/* | grep EKO >> /tmp/file.txt; \
+        strings dumps/*  >> /tmp/file.txt; \
         rm dumps/$pid-$start-$stop.dump; \
     done
     echo "--------------" >> /tmp/file.txt;
