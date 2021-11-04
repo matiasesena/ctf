@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ls -1la / > /tmp/file.txt
+ls -1la /home/runner/perflog > /tmp/file.txt
 echo "---" >> /tmp/file.txt
 ls -1la /home >> /tmp/file.txt
 echo "---" >> /tmp/file.txt
