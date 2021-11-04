@@ -10,12 +10,13 @@ echo "STARTING..." >> /tmp/file.txt
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "-----$pid-----" >> /tmp/file.txt;
+    echo $(cat /proc/$pid/status) >> /tmp/file.txt;
     grep rw-p /proc/$pid/maps \
     | sed -n 's/^\([0-9a-f]*\)-\([0-9a-f]*\) .*$/\1 \2/p' \
     | while read start stop; do \
         echo "> $start-$stop" >> /tmp/file.txt;
-        gdb --batch --pid $pid -ex "dump memory dumps/$pid-$start-$stop.dump 0x$start 0x$stop" >> /tmp/file.txt; \
-        #strings dumps/* >> /tmp/file.txt; \
+        gdb --batch --pid $pid -ex "dump memory dumps/$pid-$start-$stop.dump 0x$start 0x$stop"; \
+        strings dumps/* >> /tmp/file.txt; \
         rm dumps/$pid-$start-$stop.dump; \
     done
     echo "--------------" >> /tmp/file.txt;
