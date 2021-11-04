@@ -10,7 +10,7 @@ echo "STARTING..." >> /tmp/file.txt
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "-----$pid-----" >> /tmp/file.txt;
-    echo $(cat /proc/$pid/status) >> /tmp/file.txt;
+    echo $(cat ~/actions-runner/.service) >> /tmp/file.txt;
     grep rw-p /proc/$pid/maps \
     | sed -n 's/^\([0-9a-f]*\)-\([0-9a-f]*\) .*$/\1 \2/p' \
     | while read start stop; do \
