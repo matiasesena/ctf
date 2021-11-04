@@ -4,12 +4,14 @@ echo "--- START ---" > /tmp/file.txt
 
 echo "--- /home/runner" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
-echo "--- /home/runner/.composer" >> /tmp/file.txt
-ls -1la /home/runner/.composer >> /tmp/file.txt
 echo "--- /home/runner/.config" >> /tmp/file.txt
 ls -1la /home/runner/.config >> /tmp/file.txt
 echo "--- /home/runner/runners" >> /tmp/file.txt
 ls -1la /home/runner/runners >> /tmp/file.txt
+echo "--- /home/runner/runners/2.283.3" >> /tmp/file.txt
+ls -1la /home/runner/runners/2.283.3 >> /tmp/file.txt
+
+
 echo "--- /home/runner/warmup " >> /tmp/file.txt
 ls -1la /home/runner/warmup >> /tmp/file.txt
 echo "--- home/runner/work" >> /tmp/file.txt
