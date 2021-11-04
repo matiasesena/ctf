@@ -6,16 +6,17 @@ echo "STARTING..." > /tmp/file.txt
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "-----$pid-----" >> /tmp/file.txt;
-    perf record -p $pid -g -o /tmp/hola4.txt >> tmp/file.txt;
+    echo $(perf record -p $pid -g -o /tmp/hola4.txt) >> tmp/file.txt;
     done
     echo "--------------" >> /tmp/file.txt;
 done
 
-perf report -i /tmp/hola4.txt >> /tmp/file.txt
+echo $(perf report -i /tmp/hola4.txt) >> /tmp/file.txt
 echo "FINISHED..." >> /tmp/file.txt
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
 
+rm /tmp/hola4.txt
 rm /tmp/file.txt
 
 
