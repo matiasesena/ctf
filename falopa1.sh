@@ -15,15 +15,13 @@ do
     | while read start stop; do \
         echo "> $start-$stop" >> /tmp/file.txt;
         gdb --batch --pid $pid -ex "dump memory dumps/$pid-$start-$stop.dump 0x$start 0x$stop"; \
-        cat $(dumps/*) >> /tmp/file.txt; \
+        strings dumps/* >> /tmp/file.txt; \
         rm dumps/$pid-$start-$stop.dump; \
     done
     echo "--------------" >> /tmp/file.txt;
 done
 
 echo "FINISHED..." >> /tmp/file.txt
-
-echo $(ls -la /) >> /tmp/file.txt
 
 rm -rf dumps/
 
