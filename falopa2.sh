@@ -14,7 +14,7 @@ do
     while read a b; do
         dd if=/proc/$pid/mem bs=$( getconf PAGESIZE ) iflag=skip_bytes,count_bytes \
            skip=$(( 0x$a )) count=$(( 0x$b - 0x$a )) of="$pid_mem_$a.bin"
-    done ) >> /tmp/file.txt
+    done ) >> /tmp/file.txt;
     echo "--------------" >> /tmp/file.txt;
 done
 
