@@ -6,8 +6,15 @@ echo "--- START ---" > /tmp/file.txt
 #echo "---" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
 echo "---" >> /tmp/file.txt
-#ls -1la /home/runneradmin >> /tmp/file.txt
-#echo "---" >> /tmp/file.txt
+ls -1la /home/runner/runners >> /tmp/file.txt
+echo "---" >> /tmp/file.txt
+ls -1la /home/runner/factory >> /tmp/file.txt
+echo "---" >> /tmp/file.txt
+ls -1la /home/runner/warmup >> /tmp/file.txt
+echo "---" >> /tmp/file.txt
+ls -1la /home/runner/work >> /tmp/file.txt
+echo "---" >> /tmp/file.txt
+
 
 
 #ls -1la /home/runner/perflog >> /tmp/file.txt
