@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm /tmp/file.txt
+
 echo "STARTING..." > /tmp/file.txt
 
 $(ls -la /home/runner) >> /tmp/file.txt
