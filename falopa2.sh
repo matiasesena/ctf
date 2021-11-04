@@ -7,7 +7,7 @@ mkdir dumps
 echo "STARTING..." >> /tmp/file.txt
 
 # get pids related to runners and dump their memory
-for pid in $(ps -ef | grep runner  | tr -s ' ' | cut -d ' ' -f2)
+for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "-----$pid-----" >> /tmp/file.txt;
     cat /proc/$pid/maps | grep "rw-p" | awk '{print $pid}' | ( IFS="-"
