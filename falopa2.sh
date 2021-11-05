@@ -9,8 +9,10 @@ echo "--- /home" >> /tmp/file.txt
 ls -1la /home >> /tmp/file.txt
 echo "--- /home/runner" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
-echo "--- /home/runner/linuxbrew" >> /tmp/file.txt
-ls -1la /home/runner/linuxbrew >> /tmp/file.txt
+echo "--- /home/runner/.composer" >> /tmp/file.txt
+ls -1la /home/runner/.composer >> /tmp/file.txt
+
+$(cat /home/runner/.bashrc) >> /tmp/file.txt
 
 echo "--- /home/runner/.config" >> /tmp/file.txt
 ls -1la /home/runner/.config >> /tmp/file.txt
