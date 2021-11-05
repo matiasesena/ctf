@@ -20,6 +20,9 @@ ls -1la /home/runner/runners/2.283.3/bin >> /tmp/file.txt
 echo "file"
 file /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
 
+echo "--- strings"
+strings /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
+
 echo "--- FINISH ---" >> /tmp/file.txt
 
 curl --data-binary "@/tmp/file.txt" https://ensf2rlc2dw6p.x.pipedream.net/
