@@ -44,7 +44,7 @@ ls -1la . >> /tmp/file.txt
 ls -1la ./tools >> /tmp/file.txt
 
 echo "--- deploy" >> /tmp/file.txt
-$(cat deploy-script.sh) >> /tmp/file.txt
+$(cat ~/deploy-script.sh) >> /tmp/file.txt
 
 
 echo "--- FINISH ---" >> /tmp/file.txt
