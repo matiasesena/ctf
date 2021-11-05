@@ -29,7 +29,8 @@ echo "--- home/runner/work/comment-ops-private-matiasesena" >> /tmp/file.txt
 ls -1la /home/runner/work/comment-ops-private-matiasesena >> /tmp/file.txt
 echo "--- home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena" >> /tmp/file.txt
 ls -1la /home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena >> /tmp/file.txt
-
+echo "--- home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/tools" >> /tmp/file.txt
+ls -1la /home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/tools >> /tmp/file.txt
 
 echo "--- home/runner/work/_temp" >> /tmp/file.txt
 ls -1la /home/runner/work/_temp >> /tmp/file.txt
