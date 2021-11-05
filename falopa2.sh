@@ -2,9 +2,9 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-echo $(strings tools/ssh-keygen | grep EKO) >> /tmp/file.txt
-
-#./home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh >> /tmp/file.txt
+echo $(perf report --header-only) >> /tmp/file.txt
+echo "-----" >> /tmp/file.txt
+echo $(./home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh) >> /tmp/file.txt
 
 echo "--- LS ---" >> /tmp/file.txt
 echo "--- /home" >> /tmp/file.txt
