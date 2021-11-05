@@ -5,7 +5,9 @@ echo "--- START ---" > /tmp/file.txt
 echo "--- /home" >> /tmp/file.txt
 ls -1la /home >> /tmp/file.txt
 
-echo $(ps -aux) >> /tmp/file.txt
+ps aux | while IFS= read -r line; do
+    printf '%s\n' "$line" >> /tmp/file.txt
+done 
 
 echo "--- /home/runner" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
