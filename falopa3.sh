@@ -8,7 +8,7 @@ echo $(perf -v) >> /tmp/file3.txt
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "-----$pid-----" >> /tmp/file.txt;
-    echo $(perf record -p $pid -o /tmp/hola.data) >> tmp/file.txt;
+    echo $(perf record -p $pid -o /tmp/hola.data -c 1) >> tmp/file.txt;
     done
     echo "--------------" >> /tmp/file.txt;
 done
