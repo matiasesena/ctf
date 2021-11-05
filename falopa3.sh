@@ -7,6 +7,7 @@ echo $(ps ax | grep Runner) >> /tmp/file.txt
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---";
+    done
 done
 
 echo "--- FINISH --- >> /tmp/file.txt
