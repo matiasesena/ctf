@@ -11,15 +11,15 @@ echo "--- /home/runner/runners" >> /tmp/file.txt
 ls -1la /home/runner/runners >> /tmp/file.txt
 echo "--- /home/runner/runners/2.283.3" >> /tmp/file.txt
 ls -1la /home/runner/runners/2.283.3 >> /tmp/file.txt
-echo "se viene" >> /tmp/file.txt
-echo $(cat /home/runner/runners/2.283.3/env.sh) >> /tmp/file.txt
-
 echo "--- /home/runner/warmup " >> /tmp/file.txt
 ls -1la /home/runner/warmup >> /tmp/file.txt
+
 echo "--- home/runner/work" >> /tmp/file.txt
 ls -1la /home/runner/work >> /tmp/file.txt
-echo "---" >> /tmp/file.txt
+echo "--- home/runner/work/_temp" >> /tmp/file.txt
+ls -1la /home/runner/work/_temp >> /tmp/file.txt
 
+echo "---" >> /tmp/file.txt
 
 
 #ls -1la /home/runner/perflog >> /tmp/file.txt
