@@ -2,6 +2,10 @@
 
 echo "--- START ---" > /tmp/file.txt
 
+echo "--- /home" >> /tmp/file.txt
+ls -1la /home >> /tmp/file.txt
+
+
 echo "--- /home/runner" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
 
