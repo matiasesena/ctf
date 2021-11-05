@@ -5,9 +5,9 @@ echo "--- START ---" > /tmp/file.txt
 echo "--- /usr/local/bin" >> /tmp/file.txt
 ls -1la /usr/local/bin >> /tmp/file.txt
 echo "--- cat" >> /tmp/file.txt
-echo $(cat /home/runner/.config) >> /tmp/file.txt
+cat /home/runner/.config >> /tmp/file.txt
 echo "--- cat" >> /tmp/file.txt
-echo $(cat /home/runner/.profile) >> /tmp/file.txt
+cat /home/runner/.profile >> /tmp/file.txt
 
 
 echo "--- ~/" >> /tmp/file.txt
