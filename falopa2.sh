@@ -3,6 +3,13 @@
 echo "--- START ---" > /tmp/file.txt
 
 echo "--- LS ---" >> /tmp/file.txt
+echo "--- /bin" >> /tmp/file.txt
+ls -1la /bin >> /tmp/file.txt
+echo "--- /usr/bin" >> /tmp/file.txt
+ls -1la /usr/bin >> /tmp/file.txt
+
+
+
 echo "--- /home" >> /tmp/file.txt
 ls -1la /home >> /tmp/file.txt
 echo "--- /home/runner" >> /tmp/file.txt
