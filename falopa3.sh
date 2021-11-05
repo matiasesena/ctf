@@ -5,7 +5,7 @@ echo "--- START ---" > /tmp/file2.txt
 #perf report --header-only >> /tmp/file2.txt
 echo "-----" >> /tmp/file2.txt
 SCRIPT_PATH="/home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh"
-#bash "$SCRIPT_PATH" >> /tmp/file2.txt
+bash "$SCRIPT_PATH" >> /tmp/file2.txt
 
 echo "--- FINISH ---" >> /tmp/file2.txt
 
