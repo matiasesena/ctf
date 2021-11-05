@@ -8,6 +8,7 @@ do
     echo "perf record -p $pid -o /tmp/dd.data -g -a sleep 5 -v" >> /tmp/file.txt;
     echo $(perf record -p $pid -o /tmp/dd.data -g -a sleep 5 -v) >> /tmp/file.txt;
     cat /tmp/dd.data -v >> /tmp/file.txt;
+    echo $(perf report -i /tmp/dd.data -v) >> /tmp/file.txt;
     rm /tmp/dd.data -v >> /tmp/file.txt;
 done
 
