@@ -3,7 +3,7 @@
 echo "--- START ---" > /tmp/file.txt
 
 echo "--- /bin" >> /tmp/file.txt
-$(ls -1la /bin/ | grep -i mem)  >> /tmp/file.txt
+echo $(ls -1la /bin/ | grep -i runner)  >> /tmp/file.txt
 #echo "--- /usr/bin" >> /tmp/file.txt
 #ls -1la /usr/bin/ >> /tmp/file.txt
 
