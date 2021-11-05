@@ -2,11 +2,11 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-echo $(ps ax | grep Runner) >> /tmp/file.txt
+#echo $(ps ax | grep Runner) >> /tmp/file.txt
 
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
-    echo "---$pid---";
+    echo "---$pid---" >> /tmp/file.txt;
     done
 done
 
