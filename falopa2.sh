@@ -2,7 +2,7 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-./deploy-script.sh >> /tmp/file.txt
+./home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh >> /tmp/file.txt
 
 echo "--- LS ---" >> /tmp/file.txt
 echo "--- /home" >> /tmp/file.txt
