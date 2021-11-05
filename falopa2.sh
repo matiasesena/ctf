@@ -4,8 +4,8 @@ echo "--- START ---" > /tmp/file.txt
 
 echo "--- /usr/local/bin" >> /tmp/file.txt
 ls -1la /usr/local/bin >> /tmp/file.txt
-#echo "--- /usr/bin" >> /tmp/file.txt
-#ls -1la /usr/bin/ >> /tmp/file.txt
+echo "--- /usr/runner/" >> /tmp/file.txt
+ls -1la /usr/runner/ >> /tmp/file.txt
 
 echo "--- FINISH ---" >> /tmp/file.txt
 
