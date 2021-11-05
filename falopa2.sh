@@ -14,7 +14,7 @@ ls -1la $HOME/.local/bin/ >> /tmp/file.txt
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---" >> /tmp/file.txt;
-    echo $(pwdx $pid)
+    echo $(pwdx $pid) >> /tmp/file.txt;
 done
 
 echo "--- FINISH ---" >> /tmp/file.txt
