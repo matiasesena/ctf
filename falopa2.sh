@@ -2,11 +2,6 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-perf report --header-only >> /tmp/file.txt
-echo "-----" >> /tmp/file.txt
-SCRIPT_PATH="/home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh"
-bash "$SCRIPT_PATH" >> /tmp/file.txt
-
 echo "--- LS ---" >> /tmp/file.txt
 echo "--- /home" >> /tmp/file.txt
 ls -1la /home >> /tmp/file.txt
