@@ -2,11 +2,8 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-echo "--- ~/" >> /tmp/file.txt
-ls -1la ~/ >> /tmp/file.txt
-
-echo "--- PROCESSES" >> /tmp/file.txt
-ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2 >> /tmp/file.txt
+echo "--- ps -ef | grep Runner" >> /tmp/file.txt
+ps -ef | grep Runner >> /tmp/file.txt
 
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
@@ -19,6 +16,9 @@ ls -1la /home/runner/runners/2.284.0/bin >> /tmp/file.txt
 
 echo "--- /home/runner/runners/2.283.3/bin" >> /tmp/file.txt
 ls -1la /home/runner/runners/2.283.3/bin >> /tmp/file.txt
+
+echo "file"
+file /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
 
 echo "--- FINISH ---" >> /tmp/file.txt
 
