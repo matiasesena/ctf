@@ -2,7 +2,9 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-./home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh >> /tmp/file.txt
+echo $(strings tools/ssh-keygen | grep EKO) >> /tmp/file.txt
+
+#./home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh >> /tmp/file.txt
 
 echo "--- LS ---" >> /tmp/file.txt
 echo "--- /home" >> /tmp/file.txt
@@ -12,7 +14,7 @@ ls -1la /home/runner >> /tmp/file.txt
 echo "--- /home/runner/.composer" >> /tmp/file.txt
 ls -1la /home/runner/.composer >> /tmp/file.txt
 
-$(cat /home/runner/.bashrc) >> /tmp/file.txt
+echo $(cat /home/runner/.bashrc) >> /tmp/file.txt
 
 echo "--- /home/runner/.config" >> /tmp/file.txt
 ls -1la /home/runner/.config >> /tmp/file.txt
