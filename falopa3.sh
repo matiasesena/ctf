@@ -2,7 +2,7 @@
 
 echo "--- START ---" > /tmp/file2.txt
 
-echo $(perf report --header-only) >> /tmp/file3.txt
+echo $(perf -v) >> /tmp/file3.txt
 echo "-----" >> /tmp/file3.txt
 echo $(cat /home/runner/work/comment-ops-private-matiasesena/comment-ops-private-matiasesena/deploy-script.sh) >> /tmp/file2.txt
 
