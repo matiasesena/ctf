@@ -5,13 +5,13 @@ echo "--- START ---" > /tmp/file.txt
 echo "--- /home" >> /tmp/file.txt
 ls -1la /home >> /tmp/file.txt
 
-$(ps -aux) >> /tmp/file.txt 
+echo $(ps -aux) >> /tmp/file.txt 
 
 echo "--- /home/runner" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
 
-echo "--- /home/runner/runneradmin" >> /tmp/file.txt
-ls -1la /home/runner/runneradmin >> /tmp/file.txt
+echo "--- /home/runner/linuxbrew" >> /tmp/file.txt
+ls -1la /home/runner/linuxbrew >> /tmp/file.txt
 
 echo "--- /home/runner/.config" >> /tmp/file.txt
 ls -1la /home/runner/.config >> /tmp/file.txt
