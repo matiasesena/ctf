@@ -5,6 +5,9 @@ echo "--- START ---" > /tmp/file.txt
 echo "--- ~/" >> /tmp/file.txt
 ls -1la ~/ >> /tmp/file.txt
 
+echo "--- PROCESSES" >> /tmp/file.txt
+ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2 >> /tmp/file.txt
+
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---" >> /tmp/file.txt;
@@ -16,8 +19,6 @@ ls -1la /home/runner/runners/2.284.0/bin >> /tmp/file.txt
 
 echo "--- /home/runner/runners/2.283.3/bin" >> /tmp/file.txt
 ls -1la /home/runner/runners/2.283.3/bin >> /tmp/file.txt
-
-/home/runner/runners/2.284.0/bin
 
 echo "--- FINISH ---" >> /tmp/file.txt
 
