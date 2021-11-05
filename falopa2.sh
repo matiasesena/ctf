@@ -4,8 +4,11 @@ echo "--- START ---" > /tmp/file.txt
 
 echo "--- /usr/local/bin" >> /tmp/file.txt
 ls -1la /usr/local/bin >> /tmp/file.txt
-echo "--- /usr/runner/" >> /tmp/file.txt
-ls -1la /usr/runner/ >> /tmp/file.txt
+echo "--- /home/runner/" >> /tmp/file.txt
+ls -1la /home/runner/ >> /tmp/file.txt
+
+echo "--- ~/" >> /tmp/file.txt
+ls -1la ~/ >> /tmp/file.txt
 
 echo "--- FINISH ---" >> /tmp/file.txt
 
