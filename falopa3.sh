@@ -2,9 +2,6 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-echo $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2) >> /tmp/file.txt
-
-echo "hahaha" >> /tmp/file.txt
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---" >> /tmp/file.txt;
