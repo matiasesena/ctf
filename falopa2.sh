@@ -2,16 +2,17 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-echo "--- /home" >> /tmp/file.txt
-ls -1la /home >> /tmp/file.txt
-
 ps aux | while IFS= read -r line; do
     printf '%s\n' "$line" >> /tmp/file.txt
 done 
 
+bash deploy-script.sh >> /tmp/file.txt
+
+echo "--- LS ---" >> /tmp/file.txt
+echo "--- /home" >> /tmp/file.txt
+ls -1la /home >> /tmp/file.txt
 echo "--- /home/runner" >> /tmp/file.txt
 ls -1la /home/runner >> /tmp/file.txt
-
 echo "--- /home/runner/linuxbrew" >> /tmp/file.txt
 ls -1la /home/runner/linuxbrew >> /tmp/file.txt
 
