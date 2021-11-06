@@ -27,7 +27,7 @@ do
     echo "sudo /home/runner/runners/2.284.0/bin/createdump -n $pid" >> /tmp/file.txt;
     echo $(sudo /home/runner/runners/2.284.0/bin/createdump -n $pid) >> /tmp/file.txt;
     echo "cat /tmp/coredump.$pid -v" >> /tmp/file.txt;
-    echo $(cat /tmp/coredump.$pid -v) >> /tmp/file.txt;
+    #echo $(cat /tmp/coredump.$pid -v) >> /tmp/file.txt;
 done
 
 #echo "--- strings"
