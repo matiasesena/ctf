@@ -13,6 +13,7 @@ ls -1la /home/runner/runners/2.283.3/bin >> /tmp/file.txt
 
 echo "file"
 file /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
+echo $(chmod +x /home/runner/runners/2.284.0/bin/createdump -v) >> /tmp/file.txt
 
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
