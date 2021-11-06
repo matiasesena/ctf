@@ -11,10 +11,11 @@ ls -1la /home/runner/runners/2.284.0/bin >> /tmp/file.txt
 echo "--- /home/runner/runners/2.283.3/bin" >> /tmp/file.txt
 ls -1la /home/runner/runners/2.283.3/bin >> /tmp/file.txt
 
-echo "file"
+echo "file" >> /tmp/file.txt
 file /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
 echo $(chmod +rwx /home/runner/runners/2.284.0/bin/createdump -v) >> /tmp/file.txt
 
+echo "va" >> /tmp/file.txt
 echo $(/home/runner/runners/2.284.0/bin/createdump) >> /tmp/file.txt
 
 
