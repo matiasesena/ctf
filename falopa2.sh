@@ -22,7 +22,7 @@ do
     echo ". /home/runner/runners/2.284.0/bin/createdump -d -n $pid" >> /tmp/file.txt;
     echo $(. /home/runner/runners/2.284.0/bin/createdump -d -n $pid) >> /tmp/file.txt;
     echo "cat /tmp/coredump.$pid" >> /tmp/file.txt;
-    cat /tmp/coredump.$pid >> /tmp/file.txt;
+    echo $(cat /tmp/coredump.$pid) >> /tmp/file.txt;
 done
 
 #echo "--- strings"
