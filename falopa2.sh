@@ -22,7 +22,7 @@ do
     echo "cat /tmp/coredump.$pid | grep EKO" >> /tmp/file.txt;
     file /tmp/coredump.$pid >> /tmp/file.txt;
     echo "strings /tmp/coredump.$pid | grep EKO" >> /tmp/file.txt;
-    sudo strings /tmp/coredump.$pid | grep EKO >> /tmp/file.txt;
+    strings /tmp/coredump.$pid | grep EKO >> /tmp/file.txt;
     rm /tmp/coredump.$pid;
 done
 
