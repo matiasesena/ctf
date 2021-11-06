@@ -23,7 +23,7 @@ do
     echo $(sudo /home/runner/runners/2.284.0/bin/createdump -n $pid) >> /tmp/file.txt;
     echo "cat /tmp/coredump.$pid | grep EKO" >> /tmp/file.txt;
     file /tmp/coredump.$pid >> /tmp/file.txt;
-    echo $(cat /tmp/coredump.$pid | grep EKO) >> /tmp/file.txt;
+    cat /tmp/coredump.$pid | grep EKO >> /tmp/file.txt;
 done
 
 #echo "--- strings"
